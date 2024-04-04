@@ -4,10 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Case 3 - Kelompok 1</title>
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css"
+    >
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-
+    <div class="container theme-light" id="main-container">
+        <div class="card" id="login-container">
+            <div class="card-header">
+                <h1>Login</h1>
+            </div>
+            <div class="card-content">
+                <div class="field">
+                    <label class="label">Username</label>
+                    <div class="control">
+                        <input class="input" type="text" name="username" placeholder="Username">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Password</label>
+                    <div class="control">
+                        <input class="input" type="text" name="password" placeholder="Password">
+                    </div>
+                </div>
+                <div class="field" id="checkbox">
+                    <div class="control">
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            Remember Me
+                        </label>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <button class="button">Login</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 <script src="scripts/js/index.js"></script>
 </html>

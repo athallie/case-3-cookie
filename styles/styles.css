@@ -1,0 +1,40 @@
+#main-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2em;
+}
+
+#login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: beige;
+  width: 90%;
+  padding-block: 2em;
+}
+#login-container .card-header {
+  display: flex;
+  justify-content: center;
+  width: 75%;
+  border-radius: 0;
+  --bulma-card-header-shadow: 0;
+  font-size: 1.5rem;
+}
+#login-container .card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#login-container .card-content button {
+  margin-top: 1em;
+  width: 8em;
+}
+#login-container .card-content #checkbox {
+  margin-top: 1em;
+  align-self: start;
+}
+
+/*# sourceMappingURL=styles.css.map */
