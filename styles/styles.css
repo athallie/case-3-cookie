@@ -3,34 +3,24 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0;
+  padding: 2em;
 }
 
 #login-container {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   width: 30em;
   padding-block: 2em;
-  background-color: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(5px);
+  /*  background-color: rgb(255, 255, 255, .15);
+    backdrop-filter: blur(5px);*/
 }
-#login-container .card-header {
-  display: flex;
-  justify-content: center;
-  width: 75%;
-  border-radius: 0;
-  --bulma-card-header-shadow: 0;
-  font-size: 1.5rem;
-  color: black;
-}
-#login-container .card-content {
+#login-container .card-body {
+  padding: 0;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-#login-container .card-content button {
+#login-container .card-body button {
   margin-top: 1em;
   background-color: #720455;
   border-width: 0;
@@ -38,33 +28,25 @@
   font-weight: bold;
   transition: transform 0.9s;
 }
-#login-container .card-content button:hover {
+#login-container .card-body button:hover {
   background-color: rgba(185, 4, 146, 0.26);
   transition: background-color 0.25s;
 }
-#login-container .card-content button:not(:hover) {
+#login-container .card-body button:not(:hover) {
   transition: background-color 0.25s;
 }
-#login-container .card-content button:active {
+#login-container .card-body button:active {
   background-color: rgba(173, 100, 0, 0.26);
   transition: background-color 0.2s;
 }
-#login-container .card-content button:not(:active) {
+#login-container .card-body button:not(:active) {
   transition: background-color 0.5s;
 }
-#login-container .card-content .login-text-input, #login-container .card-content button {
-  min-width: 25em;
-  max-width: 25em;
+#login-container .card-body .login-text-input, #login-container .card-body button {
+  width: 70%;
 }
-#login-container .card-content #checkbox {
+#login-container .card-body #checkbox {
   margin-top: 1em;
-  align-self: start;
-  color: black;
-}
-#login-container .card-content .label {
-  color: white;
-}
-#login-container .card-content input::placeholder {
   color: black;
 }
 
