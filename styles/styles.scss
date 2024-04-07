@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2em;
+  padding: 0;
 }
 
 #login-container {
@@ -11,9 +11,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: beige;
-  width: 90%;
+  width: 30em;
   padding-block: 2em;
+  background-color: rgb(255, 255, 255, .15);
+  backdrop-filter: blur(5px);
 
   .card-header {
     display: flex;
@@ -22,6 +23,7 @@
     border-radius: 0;
     --bulma-card-header-shadow: 0;
     font-size: 1.5rem;
+    color: black;
   }
 
   .card-content {
@@ -31,16 +33,49 @@
 
     button {
       margin-top: 1em;
-      width: 8em;
+      background-color: #720455;
+      border-width: 0;
+      color: white;
+      font-weight: bold;
+      transition: transform .9s;
+    }
+
+    button:hover {
+      background-color: rgba(185,4,146,0.26);
+      transition: background-color .25s;
+    }
+
+    button:not(:hover) {
+      transition: background-color .25s;
+    }
+
+    button:active {
+      background-color: rgba(173,100,0,0.26);
+      transition: background-color .2s;
+    }
+
+    button:not(:active) {
+      transition: background-color .5s;
+    }
+
+    .login-text-input, button {
+      min-width: 25em;
+      max-width: 25em;
     }
 
     #checkbox {
       margin-top: 1em;
       align-self: start;
+      color: black;
     }
 
-  }
+    .label {
+      color: white;
+    }
 
-  .card-footer {
+    input::placeholder {
+      color: black;
+    }
+
   }
 }
