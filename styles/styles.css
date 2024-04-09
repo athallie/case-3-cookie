@@ -1,32 +1,66 @@
+/*
+#070f2b
+#312c4e
+#5e4a73
+#8f6a97
+#c48cba
+#fbb0dc
+*/
 #main-container {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 2em;
+  background-color: #070F2B;
 }
 
 #login-container {
   display: flex;
-  width: 30em;
-  padding-block: 2em;
-  /*  background-color: rgb(255, 255, 255, .15);
-    backdrop-filter: blur(5px);*/
+  flex-direction: row;
+  width: 80%;
+  height: 100%;
+  background-color: #312c4e;
+  color: white;
+}
+#login-container .card-title {
+  padding: 0;
+  margin-bottom: 0.5em;
+  font-size: 2rem;
+}
+#login-container #login-form-column {
+  overflow: auto;
+}
+#login-container #login-art-column img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#login-container .col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #login-container .card-body {
-  padding: 0;
+  padding-inline: 5em;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  /*Email, password, and checkbox label*/
+  /*Email & password input form*/
+}
+#login-container .card-body #login-form {
+  padding: 0;
+  margin-bottom: 1em;
 }
 #login-container .card-body button {
-  margin-top: 1em;
-  background-color: #720455;
+  background-color: #070F2B;
   border-width: 0;
   color: white;
   font-weight: bold;
   transition: transform 0.9s;
+  font-size: 0.75rem;
 }
 #login-container .card-body button:hover {
   background-color: rgba(185, 4, 146, 0.26);
@@ -42,12 +76,35 @@
 #login-container .card-body button:not(:active) {
   transition: background-color 0.5s;
 }
-#login-container .card-body .login-text-input, #login-container .card-body button {
-  width: 70%;
+#login-container .card-body .input, #login-container .card-body button {
+  width: 100%;
+  border-radius: 2em;
+}
+#login-container .card-body #email-form label, #login-container .card-body #password-form label {
+  margin-bottom: 0.5em;
+  font-size: 0.75rem;
+}
+#login-container .card-body #email-form {
+  margin-bottom: 1em;
+}
+#login-container .card-body .login-text-input {
+  background-color: transparent;
+  color: white;
+  padding-block: 0.3em;
+  padding-inline: 1em;
+  font-size: 0.75rem;
 }
 #login-container .card-body #checkbox {
-  margin-top: 1em;
-  color: black;
+  margin-top: 1.25em;
+}
+
+@media screen and (max-width: 750px) {
+  #login-art-column.col {
+    display: none;
+  }
+  .card-title {
+    text-align: center;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

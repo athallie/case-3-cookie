@@ -39,7 +39,7 @@ loginButton.addEventListener("click", (e) => {
     if (credentialValid) {
         /*Send Data to PHP Login*/
         fetch(
-            "scripts/php/login-test.php", {
+            "/scripts/php/login-test.php", {
                 method: "post",
                 headers: {
                     'Content-Type':'application/x-www-form-urlencoded'
@@ -67,6 +67,9 @@ loginButton.addEventListener("click", (e) => {
         if (checkBox.checked) {
 
         }
+
+        /*Perlu disesuiakan dengan status cookie/session*/
+        window.location.href = "profile-page.php"
     }
 
 })

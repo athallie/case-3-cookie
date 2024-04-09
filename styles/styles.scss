@@ -1,32 +1,72 @@
+/*
+#070f2b
+#312c4e
+#5e4a73
+#8f6a97
+#c48cba
+#fbb0dc
+*/
+
 #main-container {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 2em;
+  background-color: #070F2B;
 }
 
 #login-container {
   display: flex;
-  width: 30em;
-  padding-block: 2em;
-/*  background-color: rgb(255, 255, 255, .15);
-  backdrop-filter: blur(5px);*/
+  flex-direction: row;
+  width: 80%;
+  height: 100%;
+  background-color: #312c4e;
+  color: white;
+
+  .card-title {
+    padding: 0;
+    margin-bottom: .5em;
+    font-size: 2rem;
+  }
+
+  #login-form-column {
+    overflow: auto;
+  }
+
+  #login-art-column {
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   .card-body{
-    padding: 0;
+    padding-inline: 5em;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 
+    #login-form {
+      padding: 0;
+      margin-bottom: 1em;
+    }
+
     button {
-      margin-top: 1em;
-      background-color: #720455;
+      background-color: #070F2B;
       border-width: 0;
       color: white;
       font-weight: bold;
       transition: transform .9s;
+      font-size: .75rem;
     }
 
     button:hover {
@@ -47,21 +87,45 @@
       transition: background-color .5s;
     }
 
-    .login-text-input, button {
-      width: 70%;
+    .input, button {
+      width: 100%;
+      border-radius: 2em;
+    }
+
+    /*Email, password, and checkbox label*/
+    #email-form, #password-form {
+      label {
+        margin-bottom: .5em;
+        font-size: .75rem;
+      }
+    }
+
+    #email-form {
+      margin-bottom: 1em;
+    }
+
+    /*Email & password input form*/
+    .login-text-input {
+      background-color: transparent;
+      color: white;
+      padding-block: .3em;
+      padding-inline: 1em;
+      font-size: .75rem;
     }
 
     #checkbox {
-      margin-top: 1em;
-      color: black;
+      margin-top: 1.25em;
     }
+  }
+}
 
-    .label {
-      //color: white;
-    }
+@media screen and (max-width: 750px) {
 
-    #login-modal {
+  #login-art-column.col {
+    display: none;
+  }
 
-    }
+  .card-title {
+    text-align: center;
   }
 }
