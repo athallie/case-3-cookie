@@ -13,6 +13,7 @@ loginForm.addEventListener("submit", (e) => {
 /*Login Button Click Event*/
 loginButton.addEventListener("click", (e) => {
     console.log("Clicked")
+    e.preventDefault();
     let userEmail = document.querySelector('input[name="email"]');
     let password = document.querySelector('input[name="password"]');
     let checkBox = document.querySelector("input#login-checkbox");
@@ -42,39 +43,34 @@ loginButton.addEventListener("click", (e) => {
     }
 
     if (credentialValid) {
+        let data = {
+            "email": userEmail.value,
+            "password": password.value,
+            "checkbox": String(checkBox.checked)
+        }
         /*Send Data to PHP Login*/
         fetch(
-            "/scripts/php/login-test.php", {
-                method: "post",
+            "/scripts/php/login.php", {
+                method: "POST",
                 headers: {
-                    'Content-Type':'application/x-www-form-urlencoded'
+                    'Content-Type':'application/json'
                 },
-                body: JSON.stringify(
-                    {
-                        "email": userEmail.value,
-                        "password": password.value
-                    }
-                )
+                body: JSON.stringify(data)
             }
         ).then(
-            (
-                response => {
-                    response.text().then((
-                        response => {
-                            console.log(response);
-                        }
-                    ))
-                }
-            )
+            response => response.text()
+        ).then(
+            data => {
+                console.log(data);
+                /*Perlu disesuiakan dengan status cookie/session*/
+                window.location.href = "/scripts/php/login.php";
+            }
         )
 
         /*Send to PHP Cookie & Session Creator*/
         if (checkBox.checked) {
 
         }
-
-        /*Perlu disesuiakan dengan status cookie/session*/
-        window.location.href = "profile-page.php"
     }
 
 })
