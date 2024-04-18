@@ -9,43 +9,75 @@
 
 $font: "Poppins", sans-serif;
 $primary-colour: #AB6B21;
-$secondary-colour: #070f2b;
+$secondary-colour: #E4AE70;
+$tertiary-colour: #F4F9FA;
 $background-colour: #FFF4DF;
 
+#header-container {
+  background-color: $secondary-colour;
+  padding-block: 1.2em;
+  padding-inline: 3em;
+  .row {
+    align-items: center;
+  }
+
+  h1, h3 {
+    font-weight: bold;
+    margin: 0;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+
+  color: $tertiary-colour;
+}
+
+#footer-container {
+  background-color: $secondary-colour;
+  padding-block: 1em;
+  padding-inline: 3em;
+  color: $tertiary-colour;
+  h5 {
+    font-size: 1rem;
+    margin: 0;
+  }
+  font-family: $font;
+}
+
 #main-container {
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2em;
-  background-color: white;
+  height: 100vh;
+  background-color: $background-colour;
   font-family: $font;
 }
 
 #login-container {
   display: flex;
   flex-direction: row;
-  width: 80%;
-  height: 100%;
-  background-color: #312c4e;
+  width: 35%;
+  background-color: $tertiary-colour;
   color: white;
+  border-radius: 1.25em;
+  padding-block: 3em;
+  margin-top: -3.5em;
 
   .card-title {
     padding: 0;
-    margin-bottom: .5em;
+    margin-bottom: .75em;
     font-size: 2rem;
+    color: $primary-colour;
+    font-weight: bold;
   }
 
   #login-form-column {
     overflow: auto;
-  }
-
-  #login-art-column {
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
   }
 
   .col {
@@ -55,20 +87,33 @@ $background-colour: #FFF4DF;
   }
 
   .card-body{
-    padding-inline: 5em;
+    padding-inline: 3em;
+    padding-block: 0;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 
+    .input, button {
+      width: 100%;
+      border-radius: .5em;
+      border-width: 1.1px;
+      border-color: #A6C2C8;
+    }
+
     #login-form {
       padding: 0;
-      margin-bottom: 1em;
+      .row {
+        margin-inline: 0;
+        justify-content: center;
+      }
     }
 
     button {
-      background-color: #070F2B;
+      background-color: $primary-colour;
       border-width: 0;
+      border-radius: 1.5em;
+      width: 50%;
       color: white;
       font-weight: bold;
       transition: transform .9s;
@@ -76,7 +121,7 @@ $background-colour: #FFF4DF;
     }
 
     button:hover {
-      background-color: rgba(185,4,146,0.26);
+      background-color: $secondary-colour;
       transition: background-color .25s;
     }
 
@@ -85,7 +130,7 @@ $background-colour: #FFF4DF;
     }
 
     button:active {
-      background-color: rgba(173,100,0,0.26);
+      background-color: rgba(161,62,0,0.64);
       transition: background-color .2s;
     }
 
@@ -93,43 +138,45 @@ $background-colour: #FFF4DF;
       transition: background-color .5s;
     }
 
-    .input, button {
-      width: 100%;
-      border-radius: 2em;
-    }
-
     /*Email, password, and checkbox label*/
     #email-form, #password-form {
       label {
         margin-bottom: .5em;
         font-size: .75rem;
+        color: #48433D;
       }
     }
 
     #email-form {
-      margin-bottom: 1em;
+      margin-bottom: .5em;
     }
 
     /*Email & password input form*/
     .login-text-input {
       background-color: transparent;
-      color: white;
       padding-block: .3em;
       padding-inline: 1em;
       font-size: .75rem;
     }
 
     #checkbox {
+      input {
+        border-color: #48433D;
+      }
       margin-top: 1.25em;
+      margin-bottom: 1.75em;
+      color: #48433D;
     }
   }
 }
 
 #profile-container {
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: 1.5em;
+  margin-bottom: 3em;
+  padding-inline: 1.5em;
 
   #profile-header {
     margin-bottom: 2em;
@@ -154,6 +201,7 @@ $background-colour: #FFF4DF;
       }
     }
     #right-col {
+      padding-left: 3em;
       h5 {
         color: $primary-colour;
         font-weight: bold;
@@ -180,15 +228,12 @@ $background-colour: #FFF4DF;
 @media screen and (max-width: 750px) {
 
   #login-container {
-    width: 90%;
-    height: 60%;
+    width: 100%;
+    margin-block: 0;
   }
 
-  #login-art-column.col {
+  #header-container, #footer-container {
     display: none;
   }
 
-  .card-title {
-    text-align: center;
-  }
 }

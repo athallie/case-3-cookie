@@ -15,36 +15,34 @@ require 'header.php';
     <link rel="stylesheet" href="/styles/styles.css">
 </head>
 <body>
-<div class="container-fluid" id="main-container">
-    <div class="container-fluid" id="profile-container">
-        <div class="row" id="profile-header">
-            <div class="col col-3 text-center">
-                <h1>User Profile</h1>
-            </div>
-            <div class="col"></div>
+<div class="container-fluid" id="profile-container">
+    <div class="row" id="profile-header">
+        <div class="col col-3 text-center">
+            <h1>User Profile</h1>
         </div>
-        <div class="row" id="profile-body">
-            <div class="col" id="left-col">
-                <img src="/assets/profile-pictures/default-profile-picture.jpg">
-            </div>
-            <div class="col col-9" id="right-col">
-                <h5>Nama</h5>
-                <p>Nama Pengguna</p>
-
-                <h5>Email</h5>
-                <p>Email pengguna</p>
-
-                <h5>Program Studi</h5>
-                <p>Program studi pengguna</p>
-
-                <h5>NIM</h5>
-                <p>NIM pengguna</p>
-            </div>
+        <div class="col"></div>
+    </div>
+    <div class="row" id="profile-body">
+        <div class="col" id="left-col">
+            <img src="/assets/profile-pictures/default-profile-picture.jpg">
         </div>
-        <div class="row" id="profile-footer">
-            <div class="col">
-                <button type="button" class="btn">Logout</button>
-            </div>
+        <div class="col col-9" id="right-col">
+            <h5>Nama</h5>
+            <p>Nama Pengguna</p>
+
+            <h5>Email</h5>
+            <p>Email pengguna</p>
+
+            <h5>Program Studi</h5>
+            <p>Program studi pengguna</p>
+
+            <h5>NIM</h5>
+            <p>NIM pengguna</p>
+        </div>
+    </div>
+    <div class="row" id="profile-footer">
+        <div class="col">
+            <button type="button" class="btn">Logout</button>
         </div>
     </div>
 </div>
