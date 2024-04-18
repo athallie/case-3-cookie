@@ -192,6 +192,33 @@
   border-radius: 1.5em;
 }
 
+.modal {
+  border-color: red;
+  border-style: solid;
+  border-width: 1px;
+}
+.modal .modal-header {
+  background-color: #FF452B;
+  color: white;
+  font-weight: bold;
+}
+.modal .modal-body p {
+  margin: 0;
+}
+.modal .modal-body img {
+  width: 20%;
+}
+.modal .modal-footer {
+  justify-content: center;
+}
+.modal .modal-footer button {
+  background-color: #FF452B;
+  color: white;
+  width: 30%;
+  border-radius: 1.5em;
+  font-weight: bold;
+}
+
 @media screen and (max-width: 750px) {
   #login-container {
     width: 100%;

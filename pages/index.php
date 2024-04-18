@@ -40,10 +40,14 @@
         </div>
     </div>
     <div class="modal fade" id="login-modal">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-header">Test</div>
-                <div class="modal-body">Test</div>
+                <div class="modal-header">
+                </div>
+                <div class="modal-body text-center align-items-center">
+                    <img src="/assets/modal-warning-icon.png"/>
+                    <p id="modal-body-text"></p>
+                </div>
                 <div class="modal-footer">
                     <button type="button" class="btn" id="login-modal-button">Close</button>
                 </div>

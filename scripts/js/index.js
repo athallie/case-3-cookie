@@ -12,10 +12,11 @@ loginForm.addEventListener("submit", (e) => {
 
 /*Login Button Click Event*/
 loginButton.addEventListener("click", (e) => {
+    console.log("Clicked")
     let userEmail = document.querySelector('input[name="email"]');
     let password = document.querySelector('input[name="password"]');
     let checkBox = document.querySelector("input#login-checkbox");
-
+    let modalBodyText = document.querySelector("p#modal-body-text");
 
     /*Debug Purposes*/
     console.log(
@@ -29,9 +30,13 @@ loginButton.addEventListener("click", (e) => {
 
     /*Check Credentials Validity & Show Modal*/
     if (!emailIsValid(userEmail.value)) {
-        showModal("Error", "Invalid Email");
+        loginModalHeader.textContent = "Error";
+        modalBodyText.textContent = "Email tidak valid. Silahkan masukkan email yang valid.\nContoh email valid: user@xmail.com";
+        loginModal.show();
     } else if (!passwordIsValid(password.value)) {
-        showModal("Error", "Invalid Password");
+        loginModalHeader.textContent = "Error";
+        modalBodyText.textContent = "Password tidak valid. Panjang Password minimal 8 karakter serta mengandung huruf kapital, non-kapital, angka, dan simbol.\nContoh password valid: 6nV7^7-1";
+        loginModal.show();
     } else {
         credentialValid = true;
     }
