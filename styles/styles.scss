@@ -7,13 +7,19 @@
 #fbb0dc
 */
 
+$font: "Poppins", sans-serif;
+$primary-colour: #AB6B21;
+$secondary-colour: #070f2b;
+$background-colour: #FFF4DF;
+
 #main-container {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 2em;
-  background-color: #070F2B;
+  background-color: white;
+  font-family: $font;
 }
 
 #login-container {
@@ -119,7 +125,64 @@
   }
 }
 
+#profile-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  #profile-header {
+    margin-bottom: 2em;
+    h1 {
+      color: $primary-colour;
+      font-weight: bold;
+    }
+  }
+
+  #profile-body {
+    margin-bottom: 2em;
+    #left-col {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        border-width: 1px;
+        border-color: black;
+        border-style: solid;
+        border-radius: 50%;
+        width: 70%;
+      }
+    }
+    #right-col {
+      h5 {
+        color: $primary-colour;
+        font-weight: bold;
+      }
+    }
+  }
+
+  #profile-footer {
+    .col {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      button {
+        width: 15%;
+        color: white;
+        background-color: #484D50;
+        font-weight: bold;
+        border-radius: 1.5em;
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 750px) {
+
+  #login-container {
+    width: 90%;
+    height: 60%;
+  }
 
   #login-art-column.col {
     display: none;
