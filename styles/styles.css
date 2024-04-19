@@ -8,12 +8,16 @@
 */
 #header-container {
   background-color: #E4AE70;
-  padding-block: 1.2em;
+  padding-block: 1.1em;
   padding-inline: 3em;
   color: #F4F9FA;
 }
 #header-container .row {
   align-items: center;
+}
+#header-container a {
+  color: inherit;
+  text-decoration-line: none;
 }
 #header-container h1, #header-container h3 {
   font-weight: bold;
@@ -45,6 +49,40 @@
   height: 100vh;
   background-color: #FFF4DF;
   font-family: "Poppins", sans-serif;
+  padding-bottom: 3.5em;
+}
+
+#welcome-page-container .col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #AB6B21;
+  font-weight: bold;
+}
+#welcome-page-container .col img {
+  width: 60%;
+}
+#welcome-page-container .col button {
+  margin-top: 1em;
+  width: 30%;
+  color: white;
+  background-color: #AB6B21;
+  font-weight: bold;
+  border-radius: 1.5em;
+}
+#welcome-page-container .col button:hover {
+  background-color: #E4AE70;
+  transition: background-color 0.25s;
+}
+#welcome-page-container .col button:not(:hover) {
+  transition: background-color 0.25s;
+}
+#welcome-page-container .col button:active {
+  background-color: rgba(161, 62, 0, 0.64);
+  transition: background-color 0.2s;
+}
+#welcome-page-container .col button:not(:active) {
+  transition: background-color 0.5s;
 }
 
 #login-container {
@@ -55,7 +93,6 @@
   color: white;
   border-radius: 1.25em;
   padding-block: 3em;
-  margin-top: -3.5em;
 }
 #login-container .card-title {
   padding: 0;

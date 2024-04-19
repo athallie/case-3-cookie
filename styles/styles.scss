@@ -15,10 +15,15 @@ $background-colour: #FFF4DF;
 
 #header-container {
   background-color: $secondary-colour;
-  padding-block: 1.2em;
+  padding-block: 1.1em;
   padding-inline: 3em;
   .row {
     align-items: center;
+  }
+
+  a {
+    color: inherit;
+    text-decoration-line: none;
   }
 
   h1, h3 {
@@ -56,6 +61,48 @@ $background-colour: #FFF4DF;
   height: 100vh;
   background-color: $background-colour;
   font-family: $font;
+  padding-bottom: 3.5em;
+}
+
+#welcome-page-container {
+  .col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: $primary-colour;
+    font-weight: bold;
+
+    img {
+      width: 60%;
+    }
+
+    button {
+      margin-top: 1em;
+      width: 30%;
+      color: white;
+      background-color: $primary-colour;
+      font-weight: bold;
+      border-radius: 1.5em;
+    }
+
+    button:hover {
+      background-color: $secondary-colour;
+      transition: background-color .25s;
+    }
+
+    button:not(:hover) {
+      transition: background-color .25s;
+    }
+
+    button:active {
+      background-color: rgba(161,62,0,0.64);
+      transition: background-color .2s;
+    }
+
+    button:not(:active) {
+      transition: background-color .5s;
+    }
+  }
 }
 
 #login-container {
@@ -66,7 +113,6 @@ $background-colour: #FFF4DF;
   color: white;
   border-radius: 1.25em;
   padding-block: 3em;
-  margin-top: -3.5em;
 
   .card-title {
     padding: 0;

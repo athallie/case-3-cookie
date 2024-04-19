@@ -28,16 +28,16 @@ require 'header.php';
         </div>
         <div class="col col-9" id="right-col">
             <h5>Nama</h5>
-            <p>Nama Pengguna</p>
+            <p id="name-data">Nama Pengguna</p>
 
             <h5>Email</h5>
-            <p>Email pengguna</p>
+            <p id="email-data">Email pengguna</p>
 
             <h5>Program Studi</h5>
-            <p>Program studi pengguna</p>
+            <p id="program-studi-data">Program studi pengguna</p>
 
             <h5>NIM</h5>
-            <p>NIM pengguna</p>
+            <p id="nim-data">NIM pengguna</p>
         </div>
     </div>
     <div class="row" id="profile-footer">
@@ -47,6 +47,7 @@ require 'header.php';
     </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="/scripts/js/helper.js"></script>
 <script src="/scripts/js/profile-page.js"></script>
 </body>
 </html>

@@ -5,6 +5,12 @@ let loginModalBody = document.querySelector("div.modal-body");
 let credentialValid = false;
 let loginForm = document.querySelector('form#login-form');
 
+window.document.addEventListener("DOMContentLoaded", (e) => {
+    if (getCookie("email") !== null) {
+        window.location.href = './profile-page.php';
+    }
+})
+
 /*Prevent Defaults*/
 loginForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -12,8 +18,8 @@ loginForm.addEventListener("submit", (e) => {
 
 /*Login Button Click Event*/
 loginButton.addEventListener("click", (e) => {
-    console.log("Clicked")
     e.preventDefault();
+    console.log("click")
     let userEmail = document.querySelector('input[name="email"]');
     let password = document.querySelector('input[name="password"]');
     let checkBox = document.querySelector("input#login-checkbox");
@@ -50,7 +56,7 @@ loginButton.addEventListener("click", (e) => {
         }
         /*Send Data to PHP Login*/
         fetch(
-            "/scripts/php/login.php", {
+            "../php/login.php", {
                 method: "POST",
                 headers: {
                     'Content-Type':'application/json'
@@ -63,7 +69,7 @@ loginButton.addEventListener("click", (e) => {
             data => {
                 console.log(data);
                 /*Perlu disesuiakan dengan status cookie/session*/
-                window.location.href = "/scripts/php/login.php";
+                window.location.href = './profile-page.php';
             }
         )
 

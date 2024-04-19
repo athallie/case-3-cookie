@@ -17,13 +17,30 @@
             <h1>Kelompok 1</h1>
         </div>
         <div class="col col-1 text-center">
-            <h3>Home</h3>
+            <a href="#" onclick="toHomePage()">
+                <h3>Home</h3>
+            </a>
         </div>
         <div class="col col-1 text-center">
-            <h3>Profile</h3>
+            <a href="#" onclick="toProfilePage()">
+                <h3>Profile</h3>
+            </a>
         </div>
     </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="../scripts/js/helper.js"></script>
+<script>
+    function toHomePage() {
+        window.location.href = "index.php";
+    }
+    function toProfilePage() {
+        if (getCookie("email") !== null) {
+            window.location.href = "profile-page.php";
+        } else {
+            window.location.href = "login-page.php";
+        }
+    }
+</script>
 </body>
 </html>
