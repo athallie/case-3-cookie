@@ -1,3 +1,26 @@
+/*Redirect pengguna yang tidak login ke halaman login*/
+let referrer = document.referrer;
+let searchParams = new URLSearchParams(window.location.search);
+if (!(referrer.includes("login-page.php") && searchParams.get("login") === "success")) {
+    window.location.href = "./login-page.php?loggedin=false";
+}
+
+let logoutButton = document.querySelector("button#logout-button");
+
+logoutButton.addEventListener("click", (e) => {
+    let url = window.location.protocol + "//" + window.location.host + "/scripts/php/logout.php?loggedout=true";
+    fetch(
+        url
+    ).then(
+        response => response.text()
+    ).then(
+        data => {
+            console.log(data);
+            window.location.href = "./login-page.php?loggedout=true";
+        }
+    )
+})
+
 let nameText = document.querySelector("p#name-data");
 let emailText = document.querySelector("p#email-data");
 let programStudiText = document.querySelector("p#program-studi-data");
@@ -14,7 +37,7 @@ if (getCookie(`${email}`) === null) {
         "nim": generateNim()
     };
 
-    document.cookie = `${email}=${JSON.stringify(data)}`;
+    document.cookie = `${email}=${JSON.stringify(data)}; path=/`;
 } else {
     data = JSON.parse(getCookie(`${email}`));
 }
@@ -40,3 +63,4 @@ function generateNim() {
     }
     return result;
 }
+

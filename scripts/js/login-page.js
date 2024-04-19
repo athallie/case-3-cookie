@@ -1,13 +1,32 @@
 let loginButton = document.querySelector("button#login-button");
 let loginModal = new bootstrap.Modal(document.querySelector("div#login-modal"));
 let loginModalHeader = document.querySelector("div.modal-header");
+let modalBodyText = document.querySelector("p#modal-body-text");
 let loginModalBody = document.querySelector("div.modal-body");
 let credentialValid = false;
 let loginForm = document.querySelector('form#login-form');
+let referrer =  document.referrer;
+let urlParams = new URLSearchParams(window.location.search);
+
+/*Aksi apabila pengguna datang ke halaman login dari halaman profil karena belum login*/
+if (referrer.includes('profile-page.php') && urlParams.get("loggedin") === "false") {
+    loginModalHeader.textContent = "Error";
+    modalBodyText.textContent = "Anda belum login. Silahkan login untuk mengakses halaman profil.";
+    loginModal.show();
+
+    /*Hapus parameter URL*/
+    urlParams.delete("loggedin");
+    window.history.replaceState({}, '', `${window.location.pathname}`);
+} else if (referrer.includes('profile-page.php') && urlParams.get("loggedout") === "true") {
+    /*Hapus parameter URL*/
+    urlParams.delete("loggedout");
+    window.history.replaceState({}, '', `${window.location.pathname}`);
+}
 
 window.document.addEventListener("DOMContentLoaded", (e) => {
+    console.log(getCookie("email"))
     if (getCookie("email") !== null) {
-        window.location.href = './profile-page.php';
+        window.location.href = './profile-page.php?login=success';
     }
 })
 
@@ -23,7 +42,6 @@ loginButton.addEventListener("click", (e) => {
     let userEmail = document.querySelector('input[name="email"]');
     let password = document.querySelector('input[name="password"]');
     let checkBox = document.querySelector("input#login-checkbox");
-    let modalBodyText = document.querySelector("p#modal-body-text");
 
     /*Debug Purposes*/
     console.log(
@@ -55,8 +73,9 @@ loginButton.addEventListener("click", (e) => {
             "checkbox": String(checkBox.checked)
         }
         /*Send Data to PHP Login*/
+        let url = window.location.protocol + "//" + window.location.host + "/scripts/php/login.php";
         fetch(
-            "../php/login.php", {
+            url, {
                 method: "POST",
                 headers: {
                     'Content-Type':'application/json'
@@ -69,7 +88,7 @@ loginButton.addEventListener("click", (e) => {
             data => {
                 console.log(data);
                 /*Perlu disesuiakan dengan status cookie/session*/
-                window.location.href = './profile-page.php';
+                window.location.href = "./profile-page.php?login=success";
             }
         )
 

@@ -42,7 +42,7 @@ require 'header.php';
     </div>
     <div class="row" id="profile-footer">
         <div class="col">
-            <button type="button" class="btn">Logout</button>
+            <button type="button" class="btn" id="logout-button">Logout</button>
         </div>
     </div>
 </div>
