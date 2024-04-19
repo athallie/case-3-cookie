@@ -4,9 +4,9 @@ let programStudiText = document.querySelector("p#program-studi-data");
 let nimText = document.querySelector("p#nim-data");
 
 let email = getCookie("email");
-const data = {};
+let data = {};
 
-if (!data.hasOwnProperty(email)) {
+if (getCookie(`${email}`) === null) {
     data[email] = {
         "name": generateName(),
         "email": email,
@@ -14,11 +14,15 @@ if (!data.hasOwnProperty(email)) {
         "nim": generateNim()
     };
 
-    nameText.textContent = data[email]["name"];
-    emailText.textContent = data[email]["email"];
-    programStudiText.textContent = data[email]["programStudi"];
-    nimText.textContent = data[email]["nim"];
+    document.cookie = `${email}=${JSON.stringify(data)}`;
+} else {
+    data = JSON.parse(getCookie(`${email}`));
 }
+
+nameText.textContent = data[email]["name"];
+emailText.textContent = data[email]["email"];
+programStudiText.textContent = data[email]["programStudi"];
+nimText.textContent = data[email]["nim"];
 
 function generateName() {
     return "User" + Math.floor(Math.random() * 9000) + 1000;
