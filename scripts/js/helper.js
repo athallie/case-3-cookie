@@ -1,8 +1,8 @@
 /*Get URL Base*/
 
-let url = new URL(window.location.href);
-let urlParts = url.pathname.split('/');
-let projectRoot = urlParts[1];
+const url = new URL(window.location.href);
+const urlParts = url.pathname.split('/');
+const projectRoot = urlParts[1];
 let baseUrl = window.location.protocol + "//" + window.location.host;
 if (projectRoot && !projectRoot.search(".php")) {
     baseUrl += `/${projectRoot}`;

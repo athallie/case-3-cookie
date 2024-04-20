@@ -33,7 +33,7 @@
 <script>
     function toHomePage() {
         console.log(baseUrl);
-        window.location.href = baseUrl + `/index.php`;
+        window.location.href = baseUrl;
     }
     function toProfilePage() {
         if (getCookie("email") !== null) {
