@@ -32,13 +32,14 @@
 <script src="../scripts/js/helper.js"></script>
 <script>
     function toHomePage() {
-        window.location.href = "index.php";
+        console.log(baseUrl);
+        window.location.href = baseUrl + `/index.php`;
     }
     function toProfilePage() {
         if (getCookie("email") !== null) {
-            window.location.href = "profile-page.php";
+            window.location.href = baseUrl + '/pages/profile-page.php';
         } else {
-            window.location.href = "login-page.php";
+            window.location.href = baseUrl + '/pages/login-page.php';
         }
     }
 </script>
