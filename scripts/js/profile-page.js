@@ -5,6 +5,19 @@ if (!(referrer.includes("login-page.php") && searchParams.get("login") === "succ
     window.location.href = "./login-page.php?loggedin=false";
 }
 
+let email = getCookie("email") !== null ? getCookie("email") : searchParams.get("email");
+
+if (searchParams.get("login")) {
+    searchParams.delete("login");
+
+}
+
+if (searchParams.get("email")) {
+    searchParams.delete("email");
+}
+
+window.history.replaceState({}, '', `${window.location.pathname}`);
+
 let logoutButton = document.querySelector("button#logout-button");
 
 logoutButton.addEventListener("click", (e) => {
@@ -26,7 +39,6 @@ let emailText = document.querySelector("p#email-data");
 let programStudiText = document.querySelector("p#program-studi-data");
 let nimText = document.querySelector("p#nim-data");
 
-let email = getCookie("email");
 let data = {};
 
 if (getCookie(`${email}`) === null) {

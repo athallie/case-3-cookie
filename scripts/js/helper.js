@@ -1,11 +1,14 @@
 /*Get URL Base*/
-
-const url = new URL(window.location.href);
-const urlParts = url.pathname.split('/');
-const projectRoot = urlParts[1];
-let baseUrl = window.location.protocol + "//" + window.location.host;
-if (projectRoot && !projectRoot.search(".php")) {
-    baseUrl += `/${projectRoot}`;
+function getBaseUrl () {
+    let url = new URL(window.location.href);
+    let urlParts = url.pathname.split('/');
+    let projectRoot = urlParts[1];
+    let baseUrl = window.location.protocol + "//" + window.location.host;
+    let regex = /^(pages|assets|scripts|styles.README\.md|\.gitignore|.+\.php)/;
+    if (projectRoot.trim() !== "" && !regex.test(projectRoot)) {
+        baseUrl += `/${projectRoot}`;
+    }
+    return baseUrl;
 }
 
 function getCookie(cookieKey) {

@@ -21,6 +21,14 @@ if (referrer.includes('profile-page.php') && urlParams.get("loggedin") === "fals
     /*Hapus parameter URL*/
     urlParams.delete("loggedout");
     window.history.replaceState({}, '', `${window.location.pathname}`);
+} else if (referrer.includes('profile-page.php') && urlParams.get("login") === "failed") {
+    loginModalHeader.textContent = "Error";
+    modalBodyText.textContent = "Anda gagal login.";
+    loginModal.show();
+
+    /*Hapus parameter URL*/
+    urlParams.delete("login");
+    window.history.replaceState({}, '', `${window.location.pathname}`);
 }
 
 window.document.addEventListener("DOMContentLoaded", (e) => {
@@ -86,16 +94,11 @@ loginButton.addEventListener("click", (e) => {
             response => response.text()
         ).then(
             data => {
-                console.log(data);
                 /*Perlu disesuiakan dengan status cookie/session*/
-                window.location.href = "./profile-page.php?login=success";
+                window.location.href = getBaseUrl() + data;
+                console.log(window.location.href);
             }
         )
-
-        /*Send to PHP Cookie & Session Creator*/
-        if (checkBox.checked) {
-
-        }
     }
 
 })
