@@ -94,9 +94,7 @@ loginButton.addEventListener("click", (e) => {
             response => response.text()
         ).then(
             data => {
-                /*Perlu disesuiakan dengan status cookie/session*/
                 window.location.href = getBaseUrl() + data;
-                console.log(window.location.href);
             }
         )
     }

@@ -16,7 +16,7 @@ if ($email !== null || $password !== null) {
     if ($checkbox === "true") {
         setcookie("email", $email, time() + 3600, "/");
     }
-    echo "/pages/profile-page.php?login=success&email=$email";
+    echo "/pages/profile-page.php?login=success";
 } else {
     echo "/pages/login-page.php?login=failed";
 }
