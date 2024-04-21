@@ -31,7 +31,14 @@ require 'header.php';
             <p id="name-data">Nama Pengguna</p>
 
             <h5>Email</h5>
-            <p id="email-data">Email pengguna</p>
+            <p id="email-data">
+                <?php
+                    session_start();
+                    if (isset($_SESSION["email"])) {
+                        echo $_SESSION["email"];
+                    }
+                ?>
+            </p>
 
             <h5>Program Studi</h5>
             <p id="program-studi-data">Program studi pengguna</p>

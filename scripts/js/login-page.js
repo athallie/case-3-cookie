@@ -81,7 +81,7 @@ loginButton.addEventListener("click", (e) => {
             "checkbox": String(checkBox.checked)
         }
         /*Send Data to PHP Login*/
-        let url = window.location.protocol + "//" + window.location.host + "/scripts/php/login.php";
+        let url = getBaseUrl() + "/scripts/php/login.php";
         fetch(
             url, {
                 method: "POST",

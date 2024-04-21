@@ -35,7 +35,6 @@ logoutButton.addEventListener("click", (e) => {
 })
 
 let nameText = document.querySelector("p#name-data");
-let emailText = document.querySelector("p#email-data");
 let programStudiText = document.querySelector("p#program-studi-data");
 let nimText = document.querySelector("p#nim-data");
 
@@ -44,7 +43,6 @@ let data = {};
 if (getCookie(`${email}`) === null) {
     data[email] = {
         "name": generateName(),
-        "email": email,
         "programStudi": getProgramStudi(),
         "nim": generateNim()
     };
@@ -55,7 +53,6 @@ if (getCookie(`${email}`) === null) {
 }
 
 nameText.textContent = data[email]["name"];
-emailText.textContent = data[email]["email"];
 programStudiText.textContent = data[email]["programStudi"];
 nimText.textContent = data[email]["nim"];
 
