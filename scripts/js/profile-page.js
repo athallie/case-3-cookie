@@ -1,15 +1,25 @@
 /*Redirect pengguna yang tidak login ke halaman login*/
 let referrer = document.referrer;
 let searchParams = new URLSearchParams(window.location.search);
-if (!(referrer.includes("login-page.php") && searchParams.get("login") === "success")) {
-    window.location.href = "./login-page.php?loggedin=false";
+
+if (!referrer.includes("login-page.php") && searchParams.get("login") !== "success") {
+    // window.location.href = "./login-page.php?loggedin=false";
+    fetch(
+        getBaseUrl() + "/scripts/php/login.php?loggedin=false"
+    ).then(
+        response => response.text()
+    ).then(
+        data => {
+            console.log(data);
+            window.location.href = getBaseUrl() + data;
+        }
+    )
 }
 
 let email = getCookie("email") !== null ? getCookie("email") : searchParams.get("email");
 
 if (searchParams.get("login")) {
     searchParams.delete("login");
-
 }
 
 if (searchParams.get("email")) {
