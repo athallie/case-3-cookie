@@ -9,7 +9,10 @@ $email = $rawData['email'];
 $password = $rawData['password'];
 $checkbox = $rawData['checkbox'];
 
-if ($email !== null || $password !== null) {
+$validEmail = "user@example.com";
+$validPassword = "6nV7^7-1";
+
+if ($email === $validEmail && $password === $validPassword) {
     $_SESSION["login"] = true;
     $_SESSION["email"] = $email;
 

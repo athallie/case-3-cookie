@@ -8,6 +8,8 @@ let loginForm = document.querySelector('form#login-form');
 let referrer =  document.referrer;
 let urlParams = new URLSearchParams(window.location.search);
 
+console.log(referrer);
+
 /*Aksi apabila pengguna datang ke halaman login dari halaman profil karena belum login*/
 if (referrer.includes('profile-page.php') && urlParams.get("loggedin") === "false") {
     loginModalHeader.textContent = "Error";
@@ -21,9 +23,11 @@ if (referrer.includes('profile-page.php') && urlParams.get("loggedin") === "fals
     /*Hapus parameter URL*/
     urlParams.delete("loggedout");
     window.history.replaceState({}, '', `${window.location.pathname}`);
-} else if (referrer.includes('profile-page.php') && urlParams.get("login") === "failed") {
+} else if (referrer.includes('login-page.php') && urlParams.get("login") === "failed") {
+    console.log(urlParams.get("login"));
+
     loginModalHeader.textContent = "Error";
-    modalBodyText.textContent = "Anda gagal login.";
+    modalBodyText.textContent = "Anda gagal login karena email dan password Anda salah.";
     loginModal.show();
 
     /*Hapus parameter URL*/
@@ -103,12 +107,12 @@ loginButton.addEventListener("click", (e) => {
 
 /*Check email & password*/
 function passwordIsValid(password) {
-    let regex = new RegExp("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$");
+    let regex = new RegExp("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[`~!@#$%^&*()_=\\-+{}\[\\]|;:'\",<.>/?\\\\]).{8,}$");
     return regex.test(password);
 }
 
 function emailIsValid(email) {
-    let regex = new RegExp("^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$", "i");
+    let regex = new RegExp(/^\w+@\w+\.\w{2,}$/);
     return regex.test(email);
 }
 
