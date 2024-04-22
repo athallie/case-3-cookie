@@ -70,6 +70,6 @@ function generateNim() {
     for (let i = 0; i < 15; i++) {
         result += Math.floor(Math.random() * 10);
     }
-    return result;
+    return result.toString();
 }
 
